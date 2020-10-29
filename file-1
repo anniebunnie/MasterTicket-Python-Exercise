@@ -1,0 +1,40 @@
+TICKET_PRICE = 10
+
+tickets_remaining = 100  
+
+# Run this code continuosly until we run out of tickets
+while tickets_remaining >= 1:
+
+    # Output how many tickets are remaining using the tickets_remaining variable
+    print("There are {} tickets remaining".format(tickets_remaining))
+    
+    # Gather the user's name and assign to a new variable
+    name = input("What's your name? ")
+    
+    # Promt the user by name and ask how many tockets they would like
+    how_many_tickets = input("Hey {}! How many tickets they would like? ".format(name))
+    how_many_tickets = int(how_many_tickets)
+    
+    # Calculate the price (number of the tickets multiplied by the price) and assing it to a variable
+    price = how_many_tickets * TICKET_PRICE
+    
+    # Output the price to the screen
+    print("Your total is ${}".format(price))
+    
+    # Promt user if they want to proceed. Y/N
+    proceed = input("Do you want to proceed?\nEnter yes/no: ")
+    
+    # If they want to proceed
+    if proceed.lower() == 'yes':
+        # print out to the screen "SOLD!" to confirm purchase
+        # TODO: Gather credit card info and process it
+        print("SOLD!")
+        # and then decrement the tickets remainig by the number of the tickets purchased
+        tickets_remaining -= how_many_tickets
+    # Otherwise...
+    else:
+        #Thank them by name
+        print("Thank you anyways, {}!".format(name))
+    
+# Notify user that the tickets are sold out  
+print("Sorry the tickets are all SOLD OUT! :(")
